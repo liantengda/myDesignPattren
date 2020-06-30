@@ -1,4 +1,4 @@
-package com.lian.myDesign.Test;
+package com.lian.myDesign.Test.single;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
