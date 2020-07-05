@@ -28,6 +28,17 @@ public class Monster {
 
     }
 
+    @Override
+    public String toString() {
+        return "Monster{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", avatar='" + avatar + '\'' +
+                ", moveState=" + moveState +
+                ", skin=" + skin +
+                '}';
+    }
+
     public static class MonsterBuilder{
         Monster monster = new Monster();
 
@@ -38,16 +49,58 @@ public class Monster {
             return this;
         }
 
+
+        public MonsterBuilder builderStormDragonBasicInfo(){
+            monster.id = 100;
+            monster.name = "风暴龙王";
+            monster.avatar = "http://luoyefubuki.com/stromDragon";
+            return this;
+        }
+
+        public MonsterBuilder builderMagicPigBasicInfo(){
+            monster.id = 101;
+            monster.name = "魔种野猪";
+            monster.avatar = "http://luoyefubuki.com/magicPig";
+            return this;
+        }
+
+        public MonsterBuilder builderRiverXiyiBasicInfo(){
+            monster.id = 102;
+            monster.name = "河道蜥蜴";
+            monster.avatar = "http://luoyefubuki.com/riverXiyi";
+            return this;
+        }
+
+        public MonsterBuilder builderTyrantBasicInfo(){
+            monster.id = 103;
+            monster.name = "黑暗暴君";
+            monster.avatar = "http://luoyefubuki.com/tyrant";
+            return this;
+        }
+
+        public MonsterBuilder builderBlueBuff(){
+            monster.id = 104;
+            monster.name = "蓝buff";
+            monster.avatar = "http://luoyefubuki.com/blueBuff";
+            return this;
+        }
+
+        public MonsterBuilder builderRedBuff(){
+            monster.id = 105;
+            monster.name = "红buff";
+            monster.avatar = "http://luoyefubuki.com/redBuff";
+            return this;
+        }
+
+
         public MonsterBuilder moveState(MoveState.MoveStateBuilder moveStateBuilder){
             monster.moveState = moveStateBuilder.build();
             return this;
         }
 
-        public MonsterBuilder Skin(String name, BigDecimal price){
-            Skin skin = new Skin();
-            skin.setName(name);
-            skin.setPrice(price);
-            monster.skin = skin;
+
+        public MonsterBuilder Skin(Skin.SkinBuilder skinBuilder){
+            monster.skin = skinBuilder.build();
             return this;
         }
 

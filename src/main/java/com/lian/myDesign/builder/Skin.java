@@ -19,38 +19,17 @@ public class Skin {
     private String imagePath;
 
 
-    public String getImagePath() {
-        return imagePath;
-    }
+    private Skin(){}
 
-    public void setImagePath(String imagePath) {
-        this.imagePath = imagePath;
+    @Override
+    public String toString() {
+        return "Skin{" +
+                "name='" + name + '\'' +
+                ", skinFunction='" + skinFunction + '\'' +
+                ", price=" + price +
+                ", imagePath='" + imagePath + '\'' +
+                '}';
     }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public BigDecimal getPrice() {
-        return price;
-    }
-
-    public void setPrice(BigDecimal price) {
-        this.price = price;
-    }
-
-    public String getSkinFunction() {
-        return skinFunction;
-    }
-
-    public void setSkinFunction(String skinFunction) {
-        this.skinFunction = skinFunction;
-    }
-
 
     public static class SkinBuilder{
         Skin skin = new Skin();
@@ -166,6 +145,56 @@ public class Skin {
             skin.imagePath = "http://louyefubuki.com/bing/4";
             return this;
         }
+
+        public SkinBuilder builderBlueBuffChristmas(){
+            skin.name = "圣诞快乐";
+            skin.price = new BigDecimal("0.00");
+            skin.skinFunction = "好看";
+            skin.imagePath = "http://louyefubuki.com/buff/blue";
+            return this;
+        }
+
+        public SkinBuilder builderRedBuffChristmas(){
+            skin.name = "圣诞快乐";
+            skin.price = new BigDecimal("0.00");
+            skin.skinFunction = "好看";
+            skin.imagePath = "http://louyefubuki.com/buff/red";
+            return this;
+        }
+
+        public SkinBuilder builderMagicPigChristmas(){
+            skin.name = "圣诞快乐";
+            skin.price = new BigDecimal("0.00");
+            skin.skinFunction = "好看";
+            skin.imagePath = "http://louyefubuki.com/magicPig";
+            return this;
+        }
+
+        public SkinBuilder builderStormDragonChristmas(){
+            skin.name = "圣诞快乐";
+            skin.price = new BigDecimal("0.00");
+            skin.skinFunction = "好看";
+            skin.imagePath = "http://louyefubuki.com/stormDragon";
+            return this;
+        }
+
+        public SkinBuilder builderTyrantChristmas(){
+            skin.name = "圣诞快乐";
+            skin.price = new BigDecimal("0.00");
+            skin.skinFunction = "好看";
+            skin.imagePath = "http://louyefubuki.com/tyrant";
+            return this;
+        }
+
+        public SkinBuilder builderXiyiChristmas(){
+            skin.name = "圣诞快乐";
+            skin.price = new BigDecimal("0.00");
+            skin.skinFunction = "好看";
+            skin.imagePath = "http://louyefubuki.com/xiyi";
+            return this;
+        }
+
+
 
         public Skin build(){
             return skin;

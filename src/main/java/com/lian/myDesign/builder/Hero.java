@@ -24,6 +24,17 @@ public class Hero {
 
     }
 
+    @Override
+    public String toString() {
+        return "Hero{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", avatar='" + avatar + '\'' +
+                ", moveState=" + moveState +
+                ", skin=" + skin +
+                '}';
+    }
+
     public static class HeroBuilder{
         Hero hero = new Hero();
 

@@ -13,47 +13,20 @@ public class MoveState {
     private float toPosY;
     private long startTime;
 
+    private MoveState(){
 
-    public float getFromPosX() {
-        return fromPosX;
     }
 
-    public void setFromPosX(float fromPosX) {
-        this.fromPosX = fromPosX;
+    @Override
+    public String toString() {
+        return "MoveState{" +
+                "fromPosX=" + fromPosX +
+                ", formPosY=" + formPosY +
+                ", toPosX=" + toPosX +
+                ", toPosY=" + toPosY +
+                ", startTime=" + startTime +
+                '}';
     }
-
-    public float getFormPosY() {
-        return formPosY;
-    }
-
-    public void setFormPosY(float formPosY) {
-        this.formPosY = formPosY;
-    }
-
-    public float getToPosX() {
-        return toPosX;
-    }
-
-    public void setToPosX(float toPosX) {
-        this.toPosX = toPosX;
-    }
-
-    public float getToPosY() {
-        return toPosY;
-    }
-
-    public void setToPosY(float toPosY) {
-        this.toPosY = toPosY;
-    }
-
-    public long getStartTime() {
-        return startTime;
-    }
-
-    public void setStartTime(long startTime) {
-        this.startTime = startTime;
-    }
-
 
     public static class MoveStateBuilder{
         MoveState moveState = new MoveState();
@@ -110,7 +83,7 @@ public class MoveState {
          * 大龙地点
          * @return
          */
-        public MoveStateBuilder buildDragonMoveState(){
+        public MoveStateBuilder buildDragonMoveStateInitial(){
             moveState.fromPosX  = 3000;
             moveState.formPosY  = 4000;
             moveState.toPosX = 3000;
@@ -123,7 +96,7 @@ public class MoveState {
          * 暴君地点
          * @return
          */
-        public MoveStateBuilder buildTyrant(){
+        public MoveStateBuilder buildTyrantInitial(){
             moveState.fromPosX  = 4000;
             moveState.formPosY  = 1000;
             moveState.toPosX = 4000;
@@ -136,7 +109,7 @@ public class MoveState {
          * 蓝buff地点
          * @return
          */
-        public MoveStateBuilder buildBlueBuff(){
+        public MoveStateBuilder buildBlueBuffInitial(){
             moveState.fromPosX  = 2000;
             moveState.formPosY  = 3000;
             moveState.toPosX = 2000;
@@ -149,7 +122,7 @@ public class MoveState {
          * 红buff地点
          * @return
          */
-        public MoveStateBuilder buildRedBuff(){
+        public MoveStateBuilder buildRedBuffInitial(){
             moveState.fromPosX  = 3000;
             moveState.formPosY  = 1500;
             moveState.toPosX = 3000;
@@ -162,7 +135,7 @@ public class MoveState {
          * 野猪地点
          * @return
          */
-        public MoveStateBuilder buildPig(){
+        public MoveStateBuilder buildPigInitial(){
             moveState.fromPosX  = 2800;
             moveState.formPosY  = 2000;
             moveState.toPosX = 2800;
@@ -175,7 +148,7 @@ public class MoveState {
          * 三狼地点
          * @return
          */
-        public MoveStateBuilder buildWolf(){
+        public MoveStateBuilder buildWolfInitial(){
             moveState.fromPosX  = 1800;
             moveState.formPosY  = 2500;
             moveState.toPosX = 1800;
@@ -188,7 +161,7 @@ public class MoveState {
          * 构建鹰地点
          * @return
          */
-        public MoveStateBuilder buildEagle(){
+        public MoveStateBuilder buildEagleInitial(){
             moveState.fromPosX  = 4800;
             moveState.formPosY  = 1000;
             moveState.toPosX = 4800;
@@ -201,7 +174,7 @@ public class MoveState {
          * 构建蜥蜴地点
          * @return
          */
-        public MoveStateBuilder buildSnake(){
+        public MoveStateBuilder buildSnakeInitial(){
             moveState.fromPosX  = 1500;
             moveState.formPosY  = 3100;
             moveState.toPosX = 1500;
@@ -212,14 +185,40 @@ public class MoveState {
 
 
         /**
-         * 构建小兵起始位移状态
+         * 构建中路小兵起始位移状态
          * @return
          */
-        public MoveStateBuilder buildBing(){
+        public MoveStateBuilder buildMediumBingInitial(){
             moveState.fromPosX  = 1600;
             moveState.formPosY  = 1000;
             moveState.toPosX = 3500;
             moveState.toPosY = 3500;
+            moveState.startTime = System.currentTimeMillis();
+            return this;
+        }
+
+        /**
+         * 构建上路小兵起始位移状态
+         * @return
+         */
+        public MoveStateBuilder buildUpBingInitial(){
+            moveState.fromPosX  = 200;
+            moveState.formPosY  = 1800;
+            moveState.toPosX = 300;
+            moveState.toPosY = 7000;
+            moveState.startTime = System.currentTimeMillis();
+            return this;
+        }
+
+        /**
+         * 构建下路小兵起始位移状态
+         * @return
+         */
+        public MoveStateBuilder buildDownBingInitial(){
+            moveState.fromPosX  = 1800;
+            moveState.formPosY  = 200;
+            moveState.toPosX = 7000;
+            moveState.toPosY = 300;
             moveState.startTime = System.currentTimeMillis();
             return this;
         }

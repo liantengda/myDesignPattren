@@ -18,7 +18,7 @@ public class SuperBing extends AbstractBing {
 
 
     static {
-        for (int i=0;i<100;i++){
+        for (int i=1;i<=100;i++){
             SuperBing superBing = new SuperBing();
             superBing.id = i;
             superBing.avatar = "http://luoyefubuki.com/super.jpg";
@@ -39,6 +39,7 @@ public class SuperBing extends AbstractBing {
 
         @Override
         public SuperBingBuilder builderInitial() {
+            System.out.println("超级兵出击+1");
             superBing = superBingPool.poll();
             superBing.liveState = 1;
             return this;

@@ -19,7 +19,7 @@ public class RemoteBing extends AbstractBing{
 
 
     static {
-        for (int i =0 ;i<100;i++){
+        for (int i =1 ;i<=100;i++){
             RemoteBing remoteBing = new RemoteBing();
             remoteBing.id = i;
             remoteBing.name = "远程兵";
@@ -40,6 +40,7 @@ public class RemoteBing extends AbstractBing{
 
         @Override
         public RemoteBingBuilder builderInitial() {
+            System.out.println("远程兵出击+1");
              remoteBing = remoteBingPool.poll();
              remoteBing.liveState=1;
             return this;

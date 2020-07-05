@@ -19,8 +19,20 @@ public abstract class AbstractBing {
 
     //皮肤
     protected Skin skin;
-    
-    public static abstract class AbstractBingBuilder{
+
+    @Override
+    public String toString() {
+        return "AbstractBing{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", avatar='" + avatar + '\'' +
+                ", liveState=" + liveState +
+                ", moveState=" + moveState +
+                ", skin=" + skin +
+                '}';
+    }
+
+    protected static abstract class AbstractBingBuilder{
 
         public abstract AbstractBingBuilder builderInitial();
 

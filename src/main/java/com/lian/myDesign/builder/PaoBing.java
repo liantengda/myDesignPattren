@@ -17,7 +17,7 @@ public class PaoBing extends AbstractBing{
     private static final LinkedBlockingDeque<PaoBing> paoBingPoll= new LinkedBlockingDeque<>();
 
     static {
-        for (int i =0 ;i<100;i++){
+        for (int i =1 ;i<=100;i++){
             PaoBing paoBing = new PaoBing();
             paoBing.id = i;
             paoBing.name = "炮兵";
@@ -45,6 +45,7 @@ public class PaoBing extends AbstractBing{
         private PaoBing paoBing;
 
         public PaoBing.PaoBingBuilder builderInitial(){
+            System.out.println("炮兵出击+1");
             paoBing = paoBingPoll.poll();
             paoBing.liveState = 1;
             return this;

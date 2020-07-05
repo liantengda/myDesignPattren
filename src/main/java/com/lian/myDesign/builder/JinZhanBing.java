@@ -17,7 +17,7 @@ public class JinZhanBing extends AbstractBing {
     private static final LinkedBlockingDeque<JinZhanBing> jinZhanBingPool= new LinkedBlockingDeque<>();
 
     static {
-        for (int i =0 ;i<100;i++){
+        for (int i =1 ;i<=100;i++){
             JinZhanBing jinZhanBing = new JinZhanBing();
             jinZhanBing.id = i;
             jinZhanBing.name = "近战兵";
@@ -37,6 +37,7 @@ public class JinZhanBing extends AbstractBing {
 
         @Override
         public JinZhanBingBuilder builderInitial() {
+            System.out.println("近战兵出击+1");
             jinZhanBing = jinZhanBingPool.poll();
             jinZhanBing.liveState = 1;
             return this;
